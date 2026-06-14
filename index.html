@@ -30,10 +30,10 @@
   --rSm:        10px;
   --shadow:     0 20px 60px rgba(7,72,71,.13);
   --shadowSm:   0 6px 24px rgba(7,72,71,.09);
-  --bar-h:      42px;   /* info bar */
-  --nav-h:      72px;   /* main nav */
-  --offset:     calc(var(--bar-h) + var(--nav-h)); /* total fixed header */
-  --px:         clamp(1.2rem, 5vw, 4rem); /* horizontal page padding */
+  --bar-h:      42px;
+  --nav-h:      72px;
+  --offset:     calc(var(--bar-h) + var(--nav-h));
+  --px:         clamp(1.2rem, 5vw, 4rem);
 }
 
 /* ═══ RESET ═══ */
@@ -119,7 +119,6 @@ ul { list-style: none; }
   white-space: nowrap;
 }
 .nav-cta:hover { background: var(--gold-l); transform: translateY(-1px); }
-/* Hamburger */
 .ham {
   display: none; flex-direction: column; gap: 5px;
   cursor: pointer; padding: 8px; margin-left: .3rem;
@@ -130,7 +129,6 @@ ul { list-style: none; }
 .ham.open span:nth-child(2) { opacity: 0; }
 .ham.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
 
-/* Mobile nav drawer */
 .mob-nav {
   display: none; position: fixed;
   top: var(--nav-h); left: 0; width: 100%; z-index: 999;
@@ -247,24 +245,6 @@ ul { list-style: none; }
 }
 @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
 
-/* ═══ STATS RIBBON ═══ */
-.stats-ribbon {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  background: var(--teal-deep);
-}
-.stat-item {
-  text-align: center; padding: 2rem 1rem;
-  border-right: 1px solid rgba(255,255,255,.08);
-}
-.stat-item:last-child { border-right: none; }
-.stat-n {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 4vw, 2.9rem);
-  font-weight: 600; color: var(--gold-l); line-height: 1;
-}
-.stat-l { font-size: .78rem; color: rgba(255,255,255,.55); margin-top: .4rem; }
-
 /* ═══ SECTION BASE ═══ */
 .sec { padding: 5.5rem var(--px); }
 .sec-inner { max-width: 1160px; margin: 0 auto; }
@@ -311,19 +291,19 @@ ul { list-style: none; }
   border-color: var(--teal); box-shadow: var(--shadowSm); transform: translateY(-3px);
 }
 .svc-card-home:hover::before { transform: scaleY(1); }
-.svc-home-icon { font-size: 2.2rem; margin-bottom: .9rem; }
+.svc-home-icon { font-size: 2.4rem; margin-bottom: 1rem; }
 .svc-home-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.2rem, 2vw, 1.45rem);
-  font-weight: 600; color: var(--ink); margin-bottom: .45rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  font-weight: 600; color: var(--ink); margin-bottom: .5rem;
 }
 .svc-home-tagline {
-  font-size: clamp(.82rem, 1.3vw, .93rem);
-  color: var(--muted); line-height: 1.65; font-weight: 300; margin-bottom: 1.1rem;
+  font-size: clamp(.93rem, 1.5vw, 1.05rem);
+  color: var(--muted); line-height: 1.7; font-weight: 400; margin-bottom: 1.2rem;
 }
 .svc-home-link {
   display: inline-flex; align-items: center; gap: .4rem;
-  font-size: .85rem; font-weight: 600; color: var(--teal-d);
+  font-size: .95rem; font-weight: 600; color: var(--teal-d);
   transition: gap .2s;
 }
 .svc-card-home:hover .svc-home-link { gap: .7rem; }
@@ -582,31 +562,13 @@ ul { list-style: none; }
    RESPONSIVE — TABLET  ≤1024px
 ═══════════════════════════════════════ */
 @media (max-width: 1024px) {
-
-  /* hide why-us decorative float/badge on tablet */
-  .why-img-float,
-  .why-badge { display: none; }
-
-  /* stack all 2-col grids */
-  .why-grid,
-  .about-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  /* center image columns */
-  .why-img-col,
-  .about-img-wrap { max-width: 500px; margin: 0 auto; }
-
+  .why-img-float, .why-badge { display: none; }
+  .why-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .why-img-col, .about-img-wrap { max-width: 500px; margin: 0 auto; }
   .why-img-main { aspect-ratio: 16/10; }
   .about-img-main { aspect-ratio: 16/10; }
   .about-float { right: 0; bottom: -1rem; }
-
-  /* footer 2 col */
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-
-  /* modal image shorter */
   .svc-modal-img { height: 200px; }
 }
 
@@ -614,57 +576,24 @@ ul { list-style: none; }
    RESPONSIVE — MOBILE  ≤768px
 ═══════════════════════════════════════ */
 @media (max-width: 768px) {
-
-  /* hide info bar on mobile */
   .info-bar { display: none; }
-
-  /* nav sits at top (no bar) */
   .nav { top: 0; }
   .mob-nav { top: var(--nav-h); }
-
-  /* hero offset without bar */
   :root { --bar-h: 0px; }
-
-  /* hide desktop nav links */
-  .nav-links,
-  .nav-cta { display: none; }
+  .nav-links, .nav-cta { display: none; }
   .ham { display: flex; }
-
-  /* stats 3 col */
-  .stats-ribbon { grid-template-columns: repeat(3, 1fr); }
-  .stat-item:nth-child(4),
-  .stat-item:nth-child(5) { border-right: none; }
-  .stat-item:nth-child(4) { border-right: 1px solid rgba(255,255,255,.08); }
-
-  /* sections less padding */
   .sec { padding: 4rem var(--px); }
-
-  /* services full width cards */
   .svc-grid { grid-template-columns: 1fr 1fr; }
-
-  /* hero trust pills wrap nicely */
   .hero-trust { gap: .45rem; }
   .trust-pill { font-size: .76rem; padding: .34rem .8rem; }
-
-  /* form rows stack */
   .form-row { grid-template-columns: 1fr; }
-
-  /* checklist 1 col in modal */
   .svc-modal-checklist { grid-template-columns: 1fr; }
-
-  /* about values 2 col */
   .about-vals { grid-template-columns: 1fr 1fr; }
   .about-float { display: none; }
-
-  /* footer 1 col */
   .foot-grid { grid-template-columns: 1fr; gap: 2rem; }
   .foot-bottom { flex-direction: column; text-align: center; }
-
-  /* cta strip center */
   .cta-strip { text-align: center; justify-content: center; }
   .cta-actions { justify-content: center; }
-
-  /* modal full width */
   .svc-modal { max-height: 95vh; border-radius: 16px; }
   .svc-modal-body { padding: 1.5rem 1.4rem 2rem; }
   .svc-modal-img { height: 180px; }
@@ -674,40 +603,19 @@ ul { list-style: none; }
    RESPONSIVE — SMALL MOBILE  ≤480px
 ═══════════════════════════════════════ */
 @media (max-width: 480px) {
-
-  /* stats 2 col */
-  .stats-ribbon { grid-template-columns: 1fr 1fr; }
-  .stat-item { border-right: 1px solid rgba(255,255,255,.08) !important; }
-  .stat-item:nth-child(even) { border-right: none !important; }
-  .stat-item:nth-child(5) { grid-column: span 2; border-right: none !important; }
-
-  /* services 1 col */
   .svc-grid { grid-template-columns: 1fr; }
-
-  /* hero buttons stack */
   .hero-btns { flex-direction: column; align-items: flex-start; }
   .hero-btns .btn { width: 100%; justify-content: center; }
-
-  /* about vals 1 col */
   .about-vals { grid-template-columns: 1fr; }
-
-  /* cta buttons full width */
   .cta-actions { flex-direction: column; align-items: center; }
   .cta-actions .btn { width: 100%; max-width: 320px; }
-
-  /* modal image even shorter */
   .svc-modal-img { height: 150px; }
   .svc-modal-body { padding: 1.2rem 1.2rem 1.8rem; }
-
-  /* extras strip */
   .extras-strip { padding: 1.4rem 1.2rem; }
-
-  /* wa button smaller */
   .wa-btn { width: 50px; height: 50px; font-size: 1.5rem; }
   .wa { bottom: 1.2rem; right: 1.2rem; }
 }
 
-/* ═══ reduced motion ═══ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
@@ -734,7 +642,7 @@ ul { list-style: none; }
   <div class="ib-div"></div>
   <div class="ib-item">
     <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-    Mon–Fri 7am–7pm &nbsp;·&nbsp; Sat–Sun 8am–5pm
+    Mon&#8211;Fri 7am&#8211;7pm &nbsp;&middot;&nbsp; Sat&#8211;Sun 8am&#8211;5pm
   </div>
 </div>
 
@@ -749,18 +657,17 @@ ul { list-style: none; }
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="tel:0494360959" class="nav-cta">📞 Book a Clean</a>
+  <a href="tel:0494360959" class="nav-cta">&#128222; Book a Clean</a>
   <div class="ham" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- Mobile menu -->
 <div class="mob-nav" id="mobNav">
   <a href="#home"     onclick="closeMob()">Home</a>
   <a href="#services" onclick="closeMob()">Services</a>
   <a href="#why"      onclick="closeMob()">Why Us</a>
   <a href="#about"    onclick="closeMob()">About</a>
   <a href="#contact"  onclick="closeMob()">Contact</a>
-  <a href="tel:0494360959" class="mob-cta" onclick="closeMob()">📞 Book — 0494 360 959</a>
+  <a href="tel:0494360959" class="mob-cta" onclick="closeMob()">&#128222; Book &#8212; 0494 360 959</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -775,19 +682,20 @@ ul { list-style: none; }
   </div>
   <div class="hero-ov"></div>
   <div class="hero-content">
-    <div class="hero-badge">✦ Adelaide's Trusted Cleaning Partner</div>
+    <div class="hero-badge">&#10022; Adelaide's Trusted Cleaning Partner</div>
     <h1><strong>Clean home,</strong><br><em>clear mind.</em></h1>
-    <p class="hero-sub">Professional cleaning solutions for homes, offices &amp; community spaces across Adelaide. Fully insured, police-checked, eco-friendly — 100% satisfaction guaranteed.</p>
+    <!-- CHANGE c: removed "100% satisfaction guaranteed" -->
+    <p class="hero-sub">Professional cleaning solutions for homes, offices &amp; community spaces across Adelaide. Fully insured, police-checked &amp; eco-friendly.</p>
     <div class="hero-btns">
-      <a href="tel:0494360959" class="btn btn-gold">📞 Call 0494 360 959</a>
+      <a href="tel:0494360959" class="btn btn-gold">&#128222; Call 0494 360 959</a>
       <a href="#services" class="btn btn-outline-w">View Our Services</a>
     </div>
     <div class="hero-trust">
-      <div class="trust-pill">🔒 Police Checked</div>
-      <div class="trust-pill">✅ Fully Insured</div>
-      <div class="trust-pill">🌿 Eco-Friendly</div>
-      <div class="trust-pill">🤝 No Lock-in Contracts</div>
-      <div class="trust-pill">♿ NDIS Registered</div>
+      <div class="trust-pill">&#128274; Police Checked</div>
+      <div class="trust-pill">&#9989; Fully Insured</div>
+      <div class="trust-pill">&#127807; Eco-Friendly</div>
+      <div class="trust-pill">&#129309; No Lock-in Contracts</div>
+      
     </div>
   </div>
   <div class="scroll-cue">
@@ -796,14 +704,7 @@ ul { list-style: none; }
   </div>
 </section>
 
-<!-- ═══ STATS ═══ -->
-<div class="stats-ribbon" id="stats">
-  <div class="stat-item sr"><div class="stat-n">500+</div><div class="stat-l">Happy Clients</div></div>
-  <div class="stat-item sr"><div class="stat-n">4.9★</div><div class="stat-l">Google Rating</div></div>
-  <div class="stat-item sr"><div class="stat-n">10+</div><div class="stat-l">Years Experience</div></div>
-  <div class="stat-item sr"><div class="stat-n">100%</div><div class="stat-l">Satisfaction</div></div>
-  <div class="stat-item sr"><div class="stat-n">10+</div><div class="stat-l">Services</div></div>
-</div>
+<!-- CHANGE b: Stats ribbon removed entirely -->
 
 <!-- ═══ SERVICES ═══ -->
 <section class="sec services-home" id="services">
@@ -811,83 +712,82 @@ ul { list-style: none; }
     <div class="text-center sr">
       <div class="eyebrow">Our Services</div>
       <h2 class="sec-title">Cleaning solutions for every <em>space</em></h2>
-      <p class="sec-sub">From regular home cleaning to NDIS, aged care, schools and commercial spaces — tap any service to learn more and book.</p>
+      <p class="sec-sub">From regular home cleaning to NDIS, aged care, schools and commercial spaces &#8212; tap any service to learn more and book.</p>
     </div>
 
     <div class="svc-grid">
       <div class="svc-card-home sr" onclick="openModal('domestic')">
-        <div class="svc-home-icon">🏠</div>
+        <div class="svc-home-icon">&#127968;</div>
         <div class="svc-home-name">Domestic Cleaning</div>
-        <div class="svc-home-tagline">Your weekly reset — keep your home fresh and tidy.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-tagline">Your weekly reset &#8212; keep your home fresh and tidy.</div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('ndis')">
-        <div class="svc-home-icon">♿</div>
-        <div class="svc-home-name">NDIS Cleaning</div>
-        <div class="svc-home-tagline">Registered NDIS provider — compassionate, reliable support.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-icon">&#9855;</div>
+        <div class="svc-home-name">NDIS/Aged Care Cleaning</div>
+        <div class="svc-home-tagline"> NDIS/Aged Care Cleaning provider &#8212; compassionate, reliable support.</div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('homecare')">
-        <div class="svc-home-icon">❤️</div>
+        <div class="svc-home-icon">&#10084;&#65039;</div>
         <div class="svc-home-name">Home Care Cleaning</div>
-        <div class="svc-home-tagline">Aged care cleaning — safe, gentle and respectful.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-tagline">Aged care cleaning &#8212; safe, gentle and respectful.</div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('office')">
-        <div class="svc-home-icon">🏢</div>
+        <div class="svc-home-icon">&#127970;</div>
         <div class="svc-home-name">Office Cleaning</div>
-        <div class="svc-home-tagline">A workspace your team deserves — spotless, every visit.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-tagline">A workspace your team deserves &#8212; spotless, every visit.</div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('lease')">
-        <div class="svc-home-icon">🔑</div>
+        <div class="svc-home-icon">&#128273;</div>
         <div class="svc-home-name">End of Lease Clean</div>
         <div class="svc-home-tagline">Move out stress-free and get your full bond back.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('presell')">
-        <div class="svc-home-icon">🏡</div>
+        <div class="svc-home-icon">&#127969;</div>
         <div class="svc-home-name">Pre-Sell Cleaning</div>
         <div class="svc-home-tagline">Present your property at its absolute best before sale.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('school')">
-        <div class="svc-home-icon">🏫</div>
+        <div class="svc-home-icon">&#127979;</div>
         <div class="svc-home-name">School Cleaning</div>
         <div class="svc-home-tagline">Safe, hygienic environments that support student wellbeing.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('gardening')">
-        <div class="svc-home-icon">🌿</div>
+        <div class="svc-home-icon">&#127807;</div>
         <div class="svc-home-name">Gardening Services</div>
         <div class="svc-home-tagline">Lawn mowing, weeding, pruning and full garden maintenance.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('shopping')">
-        <div class="svc-home-icon">🛒</div>
+        <div class="svc-home-icon">&#128717;</div>
         <div class="svc-home-name">Shopping Centre &amp; Events</div>
         <div class="svc-home-tagline">High-traffic spaces and events kept pristine throughout.</div>
-        <div class="svc-home-link">Learn More <span>→</span></div>
+        <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('deep')" style="background:var(--teal-deep);border-color:var(--teal-deep)">
-        <div class="svc-home-icon">✨</div>
+        <div class="svc-home-icon">&#10024;</div>
         <div class="svc-home-name" style="color:#fff">Deep Clean</div>
-        <div class="svc-home-tagline" style="color:rgba(255,255,255,.7)">Top-to-bottom reset — recommended every 3–6 months.</div>
-        <div class="svc-home-link" style="color:var(--gold-l)">Learn More <span>→</span></div>
+        <div class="svc-home-tagline" style="color:rgba(255,255,255,.7)">Top-to-bottom reset &#8212; recommended every 3&#8211;6 months.</div>
+        <div class="svc-home-link" style="color:var(--gold-l)">Learn More <span>&#8594;</span></div>
       </div>
     </div>
 
-    <!-- Extras -->
     <div class="extras-strip sr">
       <div class="extras-strip-title">Extras &amp; Add-ons</div>
       <div class="extras-strip-sub">Customise any clean with these popular add-ons</div>
       <div class="extras-pills">
-        <span class="epill">🔥 Inside Oven <strong>+$70</strong></span>
-        <span class="epill">❄️ Inside Fridge <strong>+$45</strong></span>
-        <span class="epill">🛏 Linen Change <strong>+$15/bed</strong></span>
-        <span class="epill">🪟 Inside Windows <strong>+$60</strong></span>
-        <span class="epill">🧺 Laundry <strong>+$35</strong></span>
-        <span class="epill">🐾 Pet Hair <strong>+$25</strong></span>
+        <span class="epill">&#128293; Inside Oven <strong>+$70</strong></span>
+        <span class="epill">&#10052;&#65039; Inside Fridge <strong>+$45</strong></span>
+        <span class="epill">&#128716; Linen Change <strong>+$15/bed</strong></span>
+        <span class="epill">&#129695; Inside Windows <strong>+$60</strong></span>
+        <span class="epill">&#129530; Laundry <strong>+$35</strong></span>
+        <span class="epill">&#128062; Pet Hair <strong>+$25</strong></span>
       </div>
     </div>
   </div>
@@ -896,7 +796,7 @@ ul { list-style: none; }
 <!-- ═══ SERVICE MODAL ═══ -->
 <div class="svc-overlay" id="svcOverlay" onclick="closeModalBg(event)">
   <div class="svc-modal" id="svcModal">
-    <button class="svc-modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+    <button class="svc-modal-close" onclick="closeModal()" aria-label="Close">&#10005;</button>
     <img class="svc-modal-img" id="modalImg" src="" alt="" loading="lazy">
     <div class="svc-modal-body" id="modalBody"></div>
   </div>
@@ -914,19 +814,19 @@ ul { list-style: none; }
           src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=500&q=80"
           alt="Clean modern home" loading="lazy">
         <div class="why-badge">
-          <div class="why-badge-num">4.9★</div>
+          <div class="why-badge-num">4.9&#9733;</div>
           <div class="why-badge-label">Google Reviews</div>
         </div>
       </div>
       <div class="srR">
         <div class="eyebrow">Why Choose Us</div>
         <h2 class="sec-title">Why Adelaide trusts<br><em>Vivo Cleaning</em></h2>
-        <p class="sec-sub">We're not just another cleaning company — we set the standard for professional, trustworthy cleaning across South Australia.</p>
+        <p class="sec-sub">We're not just another cleaning company &#8212; we set the standard for professional, trustworthy cleaning across South Australia.</p>
         <div class="why-feats">
-          <div class="wfeat"><div class="wfeat-ico">🎓</div><div class="wfeat-t"><h4>Fully Trained &amp; Experienced Team</h4><p>Every cleaner is professionally trained, background checked, and brings years of hands-on experience to your home or workplace.</p></div></div>
-          <div class="wfeat"><div class="wfeat-ico">📅</div><div class="wfeat-t"><h4>Flexible Scheduling</h4><p>We work around your timetable — mornings, evenings, weekends, or after hours. No disruption to your routine.</p></div></div>
-          <div class="wfeat"><div class="wfeat-ico">💰</div><div class="wfeat-t"><h4>Affordable &amp; Transparent Pricing</h4><p>Fixed upfront pricing with no hidden fees. You know exactly what you're paying before we arrive.</p></div></div>
-          <div class="wfeat"><div class="wfeat-ico">🔒</div><div class="wfeat-t"><h4>Police Clearance &amp; Fully Insured</h4><p>All staff hold current police clearances and are covered by full public liability insurance for your complete peace of mind.</p></div></div>
+          <div class="wfeat"><div class="wfeat-ico">&#127892;</div><div class="wfeat-t"><h4>Fully Trained &amp; Experienced Team</h4><p>Every cleaner is professionally trained, background checked, and brings years of hands-on experience to your home or workplace.</p></div></div>
+          <div class="wfeat"><div class="wfeat-ico">&#128197;</div><div class="wfeat-t"><h4>Flexible Scheduling</h4><p>We work around your timetable &#8212; mornings, evenings, weekends, or after hours. No disruption to your routine.</p></div></div>
+          <div class="wfeat"><div class="wfeat-ico">&#128176;</div><div class="wfeat-t"><h4>Affordable &amp; Transparent Pricing</h4><p>Fixed upfront pricing with no hidden fees. You know exactly what you're paying before we arrive.</p></div></div>
+          <div class="wfeat"><div class="wfeat-ico">&#128274;</div><div class="wfeat-t"><h4>Police Clearance &amp; Fully Insured</h4><p>All staff hold current police clearances and are covered by full public liability insurance for your complete peace of mind.</p></div></div>
         </div>
       </div>
     </div>
@@ -940,23 +840,23 @@ ul { list-style: none; }
       <div>
         <div class="eyebrow">What Clients Say</div>
         <h2 class="sec-title">Excellent on <em>Google</em></h2>
-        <div style="color:var(--gold);font-size:1.1rem;margin-top:.3rem">★★★★★</div>
+        <div style="color:var(--gold);font-size:1.1rem;margin-top:.3rem">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       </div>
       <div class="g-pill">
         <div>
           <div class="g-rating">4.9 / 5.0</div>
-          <div class="g-stars">★★★★★</div>
+          <div class="g-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <div class="g-label">80+ verified reviews</div>
         </div>
       </div>
     </div>
     <div class="rev-grid">
-      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#1BBFB5,#0E8C84)">S</div><div><div class="rev-nm">Sarah M.</div><div class="rev-dt">2 weeks ago</div></div></div><div class="rev-stars">★★★★★</div><p class="rev-txt">"Absolutely amazing! My house has never looked this clean. Professional, punctual and so thorough. Highly recommend Vivo Cleaning to anyone in Adelaide!"</p></div>
-      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#074847,#1BBFB5)">J</div><div><div class="rev-nm">James T.</div><div class="rev-dt">1 month ago</div></div></div><div class="rev-stars">★★★★★</div><p class="rev-txt">"Used Vivo for my end-of-lease clean and got my full bond back! Super efficient, very well organised. Would 100% recommend to anyone moving house."</p></div>
-      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#D4A843,#a07c2a)">M</div><div><div class="rev-nm">Maria L.</div><div class="rev-dt">3 weeks ago</div></div></div><div class="rev-stars">★★★★★</div><p class="rev-txt">"Been using Vivo Cleaning for 6 months. My regular cleaner is fantastic — always on time, thorough, and lovely to deal with. Total game changer!"</p></div>
-      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#6C3483,#8E44AD)">D</div><div><div class="rev-nm">David R.</div><div class="rev-dt">2 months ago</div></div></div><div class="rev-stars">★★★★★</div><p class="rev-txt">"Booked a deep clean after renovations — incredible result. Every corner spotless, eco-friendly products throughout. Couldn't be happier!"</p></div>
-      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#C0392B,#E74C3C)">T</div><div><div class="rev-nm">Teresa K.</div><div class="rev-dt">1 week ago</div></div></div><div class="rev-stars">★★★★★</div><p class="rev-txt">"Polite, thorough and efficient. Found Vivo Cleaning online and so glad I did. My home smells fresh and looks immaculate every visit."</p></div>
-      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#16A085,#1ABC9C)">A</div><div><div class="rev-nm">Angela P.</div><div class="rev-dt">5 days ago</div></div></div><div class="rev-stars">★★★★★</div><p class="rev-txt">"Used for our office — the difference is incredible. Staff are more motivated in a clean space. Great communication and easy to reschedule."</p></div>
+      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#1BBFB5,#0E8C84)">S</div><div><div class="rev-nm">Sarah M.</div><div class="rev-dt">2 weeks ago</div></div></div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-txt">"Absolutely amazing! My house has never looked this clean. Professional, punctual and so thorough. Highly recommend Vivo Cleaning to anyone in Adelaide!"</p></div>
+      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#074847,#1BBFB5)">J</div><div><div class="rev-nm">James T.</div><div class="rev-dt">1 month ago</div></div></div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-txt">"Used Vivo for my end-of-lease clean and got my full bond back! Super efficient, very well organised. Would 100% recommend to anyone moving house."</p></div>
+      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#D4A843,#a07c2a)">M</div><div><div class="rev-nm">Maria L.</div><div class="rev-dt">3 weeks ago</div></div></div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-txt">"Been using Vivo Cleaning for 6 months. My regular cleaner is fantastic &#8212; always on time, thorough, and lovely to deal with. Total game changer!"</p></div>
+      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#6C3483,#8E44AD)">D</div><div><div class="rev-nm">David R.</div><div class="rev-dt">2 months ago</div></div></div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-txt">"Booked a deep clean after renovations &#8212; incredible result. Every corner spotless, eco-friendly products throughout. Couldn't be happier!"</p></div>
+      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#C0392B,#E74C3C)">T</div><div><div class="rev-nm">Teresa K.</div><div class="rev-dt">1 week ago</div></div></div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-txt">"Polite, thorough and efficient. Found Vivo Cleaning online and so glad I did. My home smells fresh and looks immaculate every visit."</p></div>
+      <div class="rev-card sr"><div class="rev-top"><div class="rev-av" style="background:linear-gradient(135deg,#16A085,#1ABC9C)">A</div><div><div class="rev-nm">Angela P.</div><div class="rev-dt">5 days ago</div></div></div><div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="rev-txt">"Used for our office &#8212; the difference is incredible. Staff are more motivated in a clean space. Great communication and easy to reschedule."</p></div>
     </div>
   </div>
 </section>
@@ -968,8 +868,8 @@ ul { list-style: none; }
     <p>Free quote in under 3 minutes. No lock-in contracts. No hidden fees.</p>
   </div>
   <div class="cta-actions">
-    <a href="tel:0494360959" class="btn btn-gold">📞 Call 0494 360 959</a>
-    <a href="mailto:vivocleaning@yahoo.com" class="btn btn-outline-w">✉ Email Us</a>
+    <a href="tel:0494360959" class="btn btn-gold">&#128222; Call 0494 360 959</a>
+    <a href="mailto:vivocleaning@yahoo.com" class="btn btn-outline-w">&#9993; Email Us</a>
   </div>
 </div>
 
@@ -988,13 +888,14 @@ ul { list-style: none; }
       <div class="srR">
         <div class="eyebrow">About Vivo Cleaning</div>
         <h2 class="sec-title">Your trusted cleaning <em>partner</em> in Adelaide</h2>
-        <p style="color:var(--muted);line-height:1.88;margin-bottom:1.1rem;font-size:clamp(.88rem,1.5vw,1rem);font-weight:300">Vivo Cleaning is a locally owned and operated cleaning business based in Felixstow, South Australia. For over 10 years, we've been delivering professional cleaning solutions for homes, offices, schools, and community spaces across Adelaide.</p>
-        <p style="color:var(--muted);line-height:1.88;margin-bottom:2rem;font-size:clamp(.88rem,1.5vw,1rem);font-weight:300">Our team of fully trained, police-cleared cleaners are passionate about delivering consistent, reliable results — using eco-friendly, hospital-grade products that are safe for your family, your clients, and the environment.</p>
+        <!-- CHANGE a2: removed "For over 10 years..." sentence -->
+        <p style="color:var(--muted);line-height:1.88;margin-bottom:1.1rem;font-size:clamp(.88rem,1.5vw,1rem);font-weight:300">Vivo Cleaning is a locally owned and operated cleaning business based in Felixstow, South Australia.</p>
+        <p style="color:var(--muted);line-height:1.88;margin-bottom:2rem;font-size:clamp(.88rem,1.5vw,1rem);font-weight:300">Our team of fully trained, police-cleared cleaners are passionate about delivering consistent, reliable results &#8212; using eco-friendly, hospital-grade products that are safe for your family, your clients, and the environment.</p>
         <div class="about-vals">
-          <div class="aval"><div class="aval-icon">🏡</div><h4>Locally Owned</h4><p>Adelaide-based team proud to serve our community</p></div>
-          <div class="aval"><div class="aval-icon">🌿</div><h4>Eco Products</h4><p>Safe for kids, pets, NDIS participants &amp; the planet</p></div>
-          <div class="aval"><div class="aval-icon">🔒</div><h4>Fully Insured</h4><p>Police-cleared staff, full public liability cover</p></div>
-          <div class="aval"><div class="aval-icon">💯</div><h4>Guaranteed</h4><p>100% satisfaction or we re-clean for free</p></div>
+          <div class="aval"><div class="aval-icon">&#127969;</div><h4>Locally Owned</h4><p>Adelaide-based team proud to serve our community</p></div>
+          <div class="aval"><div class="aval-icon">&#127807;</div><h4>Eco Products</h4><p>Safe for kids, pets, NDIS participants &amp; the planet</p></div>
+          <div class="aval"><div class="aval-icon">&#128274;</div><h4>Fully Insured</h4><p>Police-cleared staff, full public liability cover</p></div>
+          <!-- CHANGE a1: Guaranteed card removed -->
         </div>
       </div>
     </div>
@@ -1012,13 +913,13 @@ ul { list-style: none; }
             alt="Clean Adelaide home" loading="lazy">
           <div class="cinfo-body">
             <h2>Let's get your space <em style="color:var(--teal);font-style:italic">sparkling</em></h2>
-            <p class="desc">Ready to book, have a question, or want a quick quote? We'd love to hear from you — usually respond within a few hours.</p>
+            <p class="desc">Ready to book, have a question, or want a quick quote? We'd love to hear from you &#8212; usually respond within a few hours.</p>
             <div class="cinfo-list">
-              <div class="cinfo-item"><div class="cinfo-icon">📍</div><div><div class="cinfo-label">Address</div><div class="cinfo-val">Shop 4, 475 Payneham Road, Felixstow SA 5070</div></div></div>
-              <div class="cinfo-item"><div class="cinfo-icon">📞</div><div><div class="cinfo-label">Phone</div><div class="cinfo-val"><a href="tel:0494360959">0494 360 959</a></div></div></div>
-              <div class="cinfo-item"><div class="cinfo-icon">✉</div><div><div class="cinfo-label">Email</div><div class="cinfo-val"><a href="mailto:vivocleaning@yahoo.com">vivocleaning@yahoo.com</a></div></div></div>
-              <div class="cinfo-item"><div class="cinfo-icon">🌐</div><div><div class="cinfo-label">Website</div><div class="cinfo-val"><a href="https://vivocleaning.com.au" style="color:var(--teal)">vivocleaning.com.au</a></div></div></div>
-              <div class="cinfo-item"><div class="cinfo-icon">🕐</div><div><div class="cinfo-label">Hours</div><div class="cinfo-val">Mon–Fri 7am–7pm · Sat–Sun 8am–5pm</div></div></div>
+              <div class="cinfo-item"><div class="cinfo-icon">&#128205;</div><div><div class="cinfo-label">Address</div><div class="cinfo-val">Shop 4, 475 Payneham Road, Felixstow SA 5070</div></div></div>
+              <div class="cinfo-item"><div class="cinfo-icon">&#128222;</div><div><div class="cinfo-label">Phone</div><div class="cinfo-val"><a href="tel:0494360959">0494 360 959</a></div></div></div>
+              <div class="cinfo-item"><div class="cinfo-icon">&#9993;</div><div><div class="cinfo-label">Email</div><div class="cinfo-val"><a href="mailto:vivocleaning@yahoo.com">vivocleaning@yahoo.com</a></div></div></div>
+              <div class="cinfo-item"><div class="cinfo-icon">&#127760;</div><div><div class="cinfo-label">Website</div><div class="cinfo-val"><a href="https://vivocleaning.com.au" style="color:var(--teal)">vivocleaning.com.au</a></div></div></div>
+              <div class="cinfo-item"><div class="cinfo-icon">&#128336;</div><div><div class="cinfo-label">Hours</div><div class="cinfo-val">Mon&#8211;Fri 7am&#8211;7pm &middot; Sat&#8211;Sun 8am&#8211;5pm</div></div></div>
             </div>
           </div>
         </div>
@@ -1055,7 +956,7 @@ ul { list-style: none; }
           <div class="form-row full">
             <div class="fld"><label>Message</label><textarea placeholder="Tell us about your property and what you need..."></textarea></div>
           </div>
-          <button class="submit-btn" onclick="return false">Send Message →</button>
+          <button class="submit-btn" onclick="return false">Send Message &#8594;</button>
         </div>
       </div>
     </div>
@@ -1070,10 +971,10 @@ ul { list-style: none; }
       <div class="foot-brand-sub">Residential &amp; Commercial</div>
       <p class="foot-desc">Adelaide's trusted cleaning partner for homes, offices, schools, NDIS participants &amp; community spaces. Serving all suburbs across South Australia.</p>
       <div class="foot-contact">
-        <span>📞 <a href="tel:0494360959">0494 360 959</a></span>
-        <span>✉ <a href="mailto:vivocleaning@yahoo.com">vivocleaning@yahoo.com</a></span>
-        <span>📍 Shop 4, 475 Payneham Rd, Felixstow SA 5070</span>
-        <span>🌐 <a href="https://vivocleaning.com.au">vivocleaning.com.au</a></span>
+        <span>&#128222; <a href="tel:0494360959">0494 360 959</a></span>
+        <span>&#9993; <a href="mailto:vivocleaning@yahoo.com">vivocleaning@yahoo.com</a></span>
+        <span>&#128205; Shop 4, 475 Payneham Rd, Felixstow SA 5070</span>
+        <span>&#127760; <a href="https://vivocleaning.com.au">vivocleaning.com.au</a></span>
       </div>
     </div>
     <div class="fcol">
@@ -1107,39 +1008,38 @@ ul { list-style: none; }
         <li><a href="#">Glenelg &amp; Marion</a></li>
         <li><a href="#">Tea Tree Gully</a></li>
         <li><a href="#">Felixstow &amp; Payneham</a></li>
-        <li><a href="#">All Adelaide Suburbs →</a></li>
+        <li><a href="#">All Adelaide Suburbs &#8594;</a></li>
       </ul>
     </div>
   </div>
   <div class="foot-bottom">
-    <span>© 2026 Vivo Cleaning. All rights reserved. ABN 12 345 678 901</span>
+    <span>&copy; 2026 Vivo Cleaning. All rights reserved. ABN 12 345 678 901</span>
     <div class="socials">
       <a class="soc" href="#" title="Facebook">f</a>
       <a class="soc" href="#" title="Instagram">ig</a>
-      <a class="soc" href="mailto:vivocleaning@yahoo.com" title="Email">✉</a>
+      <a class="soc" href="mailto:vivocleaning@yahoo.com" title="Email">&#9993;</a>
     </div>
   </div>
 </footer>
 
 <!-- ═══ WHATSAPP ═══ -->
 <div class="wa">
-  <a class="wa-btn" href="https://wa.me/610494360959" target="_blank" rel="noopener" title="WhatsApp">💬<div class="wa-pulse"></div></a>
+  <a class="wa-btn" href="https://wa.me/610494360959" target="_blank" rel="noopener" title="WhatsApp">&#128172;<div class="wa-pulse"></div></a>
   <div class="wa-lbl">WhatsApp Us</div>
 </div>
 
 <script>
-/* ── Service data ── */
 const SVC = {
-  domestic:{tag:'🏠 Most Popular',title:'Domestic Cleaning',tagline:'Your weekly reset button',desc:'Designed to maintain your home between the chaos of everyday life. Our regular domestic clean keeps things fresh, tidy, and under control week after week. Most clients choose weekly or fortnightly visits.',duration:'⏱ 2–4 hours typical duration',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',items:['All surfaces dusted & wiped','Furniture dusted','Light switches sanitised','Sink & tapware cleaned','Shower & tiles cleaned','Toilet disinfected','Microwave inside & out','Appliances exteriors wiped','Cupboard exteriors wiped','Bins emptied','Floors vacuumed','Floors mopped']},
-  ndis:{tag:'♿ NDIS Registered',title:'NDIS Cleaning',tagline:'Compassionate, reliable support',desc:'Vivo Cleaning is a registered NDIS provider. We understand every participant\'s needs are unique and tailor our services accordingly — delivering compassionate, respectful cleaning that supports independence and dignity.',duration:'⏱ Duration varies by care plan',img:'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80',items:['Tailored to NDIS care plans','Trained & compassionate staff','Flexible scheduling','Surfaces dusted & sanitised','Kitchen benches cleaned','Bathroom thoroughly cleaned','Toilets disinfected','Floors vacuumed & mopped','Bins emptied','Laundry assistance available','Plan-managed & self-managed','Regular progress updates']},
-  homecare:{tag:'❤️ Aged Care',title:'Home Care Cleaning',tagline:'Gentle care, real respect',desc:'Our home care service is designed for elderly clients and those requiring extra support. We provide gentle, respectful cleaning that helps seniors live comfortably and safely in their own homes.',duration:'⏱ Flexible — based on care needs',img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',items:['Safe, non-toxic products','Patient & respectful staff','Living areas cleaned','Kitchen cleaned & sanitised','Bathroom & toilet disinfected','Floors vacuumed & mopped','Bins emptied & replaced','Laundry assistance available','Flexible visit scheduling','Consistent assigned cleaner','Progress notes if required','Fully insured & police-checked']},
-  office:{tag:'🏢 Commercial',title:'Office & Commercial Cleaning',tagline:'A workspace your team deserves',desc:'We tailor commercial cleaning schedules to your business hours and requirements. From small offices to large commercial premises — professional, consistent results every time with minimal disruption.',duration:'⏱ Duration varies by premises size',img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',items:['Desks & surfaces wiped','Screens & keyboards dusted','Phones & equipment sanitised','Meeting rooms cleaned','Skirting boards dusted','Bins emptied & replaced','Breakroom / kitchen cleaned','Appliances wiped inside & out','Toilets & urinals disinfected','Soap & paper restocked','Mirrors & glass cleaned','Floors vacuumed & mopped']},
-  lease:{tag:'🔑 Get Your Bond Back',title:'End of Lease Clean',tagline:'Move out stress-free',desc:'Moving is stressful enough — our end of lease clean is designed to satisfy even the strictest property manager inspection and maximise your bond return. We cover every detail, top to bottom.',duration:'⏱ 6–8 hours typical duration',img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',items:['Inside windows cleaned','Cobweb removal throughout','Oven deep cleaned','Fridge inside (on request)','Cupboards inside & out','Drawers cleaned inside','Window tracks & frames','Wall spot cleaning','Grout deep cleaned','Shower glass descaled','Mirrors streak-free polished','All floors vacuumed & mopped']},
-  presell:{tag:'🏡 Selling Your Home',title:'Pre-Sell Cleaning',tagline:'First impressions sell homes',desc:'Presenting your property at its absolute best can make a real difference to buyer perception and sale price. Our pre-sell clean ensures your home looks immaculate for photos, inspections and open homes.',duration:'⏱ 4–7 hours typical duration',img:'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',items:['Full interior deep clean','Windows cleaned inside','All surfaces polished','Kitchen deep cleaned','Oven & appliances cleaned','Bathrooms deep scrubbed','Grout & tiles descaled','Cobwebs removed','Doors & frames wiped','Skirting boards cleaned','Mirrors & glass streak-free','Floors vacuumed & mopped']},
-  school:{tag:'🏫 Education Sector',title:'School Cleaning',tagline:'Safe, hygienic learning environments',desc:'We provide professional cleaning for schools, childcare centres and educational facilities across Adelaide. Our team ensures classrooms, common areas and amenities meet the highest hygiene standards.',duration:'⏱ After hours or scheduled visits',img:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80',items:['Classrooms dusted & sanitised','Desks & chairs wiped down','Whiteboards & surfaces cleaned','Common areas thoroughly cleaned','Toilets & amenities disinfected','Soap & paper restocked','Kitchen / staffroom cleaned','Hard floors mopped','Carpets vacuumed','Bins emptied throughout','Touch points sanitised','Eco-safe products used']},
-  gardening:{tag:'🌿 Outdoor Services',title:'Gardening Services',tagline:'Kerb appeal you\'ll be proud of',desc:'Our gardening and outdoor maintenance covers everything from regular lawn mowing to full garden tidy-ups. Ideal as a standalone service or combined with our cleaning packages for complete property care.',duration:'⏱ Duration varies by garden size',img:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',items:['Lawn mowing & edging','Garden beds weeded','Hedges & shrubs pruned','Leaf blowing & raking','Path & driveway sweeping','Green waste removed','Garden watering (on request)','Mulching available','Seasonal tidy-ups','Combine with indoor cleaning']},
-  shopping:{tag:'🛒 High Traffic Spaces',title:'Shopping Centre & Event Cleaning',tagline:'High-traffic spaces, always pristine',desc:'We provide professional cleaning for shopping centres, retail precincts and events across Adelaide. Whether it\'s daily maintenance, pre-event setup or post-event cleanup — reliable results at scale.',duration:'⏱ Duration varies by project',img:'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80',items:['Common areas maintained','Floor scrubbing & polishing','Entrance & lobby cleaning','Amenities disinfected','Escalators & lifts wiped','Rubbish & waste removed','Pre-event setup cleaning','Post-event deep clean','Graffiti & spill response','Night & after-hours available','Scheduled rosters available','Dedicated site supervisor']},
-  deep:{tag:'✨ Every 3–6 Months',title:'Deep Clean',tagline:'A proper top-to-bottom reset',desc:'The deep clean is a more thorough service for homes that need extra care beyond a regular clean. We recommend starting with a deep clean if your property hasn\'t been professionally cleaned recently.',duration:'⏱ 4–6 hours typical duration',img:'https://images.unsplash.com/photo-1628177142898-93e36e4e3a0b?w=800&q=80',items:['Ceiling fans dusted','Skirting boards cleaned','Window sills & frames','Oven deep cleaned','Rangehood & filter cleaned','Cupboard interiors wiped','Cooktop & splashback scrubbed','Grout deep cleaned','Shower glass descaled','Extraction fans cleaned','Mirrors polished streak-free','All floors vacuumed & mopped']}
+  domestic:{tag:'&#127968; Most Popular',title:'Domestic Cleaning',tagline:'Your weekly reset button',desc:'Designed to maintain your home between the chaos of everyday life. Our regular domestic clean keeps things fresh, tidy, and under control week after week. Most clients choose weekly or fortnightly visits.',duration:'&#9200; 2–4 hours typical duration',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',items:['All surfaces dusted & wiped','Furniture dusted','Light switches sanitised','Sink & tapware cleaned','Shower & tiles cleaned','Toilet disinfected','Microwave inside & out','Appliances exteriors wiped','Cupboard exteriors wiped','Bins emptied','Floors vacuumed','Floors mopped']},
+  ndis:{tag:'&#9855; NDIS Registered',title:'NDIS Cleaning',tagline:'Compassionate, reliable support',desc:'Vivo Cleaning is a NDIS/Aged Care Cleaning provider. We understand every participant\'s needs are unique and tailor our services accordingly — delivering compassionate, respectful cleaning that supports independence and dignity.',duration:'&#9200; Duration varies by care plan',img:'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80',items:['Tailored to NDIS care plans','Trained & compassionate staff','Flexible scheduling','Surfaces dusted & sanitised','Kitchen benches cleaned','Bathroom thoroughly cleaned','Toilets disinfected','Floors vacuumed & mopped','Bins emptied','Laundry assistance available','Plan-managed & self-managed','Regular progress updates']},
+  homecare:{tag:'&#10084;&#65039; Aged Care',title:'Home Care Cleaning',tagline:'Gentle care, real respect',desc:'Our home care service is designed for elderly clients and those requiring extra support. We provide gentle, respectful cleaning that helps seniors live comfortably and safely in their own homes.',duration:'&#9200; Flexible — based on care needs',img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',items:['Safe, non-toxic products','Patient & respectful staff','Living areas cleaned','Kitchen cleaned & sanitised','Bathroom & toilet disinfected','Floors vacuumed & mopped','Bins emptied & replaced','Laundry assistance available','Flexible visit scheduling','Consistent assigned cleaner','Progress notes if required','Fully insured & police-checked']},
+  office:{tag:'&#127962; Commercial',title:'Office & Commercial Cleaning',tagline:'A workspace your team deserves',desc:'We tailor commercial cleaning schedules to your business hours and requirements. From small offices to large commercial premises — professional, consistent results every time with minimal disruption.',duration:'&#9200; Duration varies by premises size',img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',items:['Desks & surfaces wiped','Screens & keyboards dusted','Phones & equipment sanitised','Meeting rooms cleaned','Skirting boards dusted','Bins emptied & replaced','Breakroom / kitchen cleaned','Appliances wiped inside & out','Toilets & urinals disinfected','Soap & paper restocked','Mirrors & glass cleaned','Floors vacuumed & mopped']},
+  lease:{tag:'&#128273; Get Your Bond Back',title:'End of Lease Clean',tagline:'Move out stress-free',desc:'Moving is stressful enough — our end of lease clean is designed to satisfy even the strictest property manager inspection and maximise your bond return. We cover every detail, top to bottom.',duration:'&#9200; 6–8 hours typical duration',img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',items:['Inside windows cleaned','Cobweb removal throughout','Oven deep cleaned','Fridge inside (on request)','Cupboards inside & out','Drawers cleaned inside','Window tracks & frames','Wall spot cleaning','Grout deep cleaned','Shower glass descaled','Mirrors streak-free polished','All floors vacuumed & mopped']},
+  presell:{tag:'&#127969; Selling Your Home',title:'Pre-Sell Cleaning',tagline:'First impressions sell homes',desc:'Presenting your property at its absolute best can make a real difference to buyer perception and sale price. Our pre-sell clean ensures your home looks immaculate for photos, inspections and open homes.',duration:'&#9200; 4–7 hours typical duration',img:'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',items:['Full interior deep clean','Windows cleaned inside','All surfaces polished','Kitchen deep cleaned','Oven & appliances cleaned','Bathrooms deep scrubbed','Grout & tiles descaled','Cobwebs removed','Doors & frames wiped','Skirting boards cleaned','Mirrors & glass streak-free','Floors vacuumed & mopped']},
+  school:{tag:'&#127979; Education Sector',title:'School Cleaning',tagline:'Safe, hygienic learning environments',desc:'We provide professional cleaning for schools, childcare centres and educational facilities across Adelaide. Our team ensures classrooms, common areas and amenities meet the highest hygiene standards.',duration:'&#9200; After hours or scheduled visits',img:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80',items:['Classrooms dusted & sanitised','Desks & chairs wiped down','Whiteboards & surfaces cleaned','Common areas thoroughly cleaned','Toilets & amenities disinfected','Soap & paper restocked','Kitchen / staffroom cleaned','Hard floors mopped','Carpets vacuumed','Bins emptied throughout','Touch points sanitised','Eco-safe products used']},
+  gardening:{tag:'&#127807; Outdoor Services',title:'Gardening Services',tagline:'Kerb appeal you\'ll be proud of',desc:'Our gardening and outdoor maintenance covers everything from regular lawn mowing to full garden tidy-ups. Ideal as a standalone service or combined with our cleaning packages for complete property care.',duration:'&#9200; Duration varies by garden size',img:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',items:['Lawn mowing & edging','Garden beds weeded','Hedges & shrubs pruned','Leaf blowing & raking','Path & driveway sweeping','Green waste removed','Garden watering (on request)','Mulching available','Seasonal tidy-ups','Combine with indoor cleaning']},
+  shopping:{tag:'&#128717; High Traffic Spaces',title:'Shopping Centre & Event Cleaning',tagline:'High-traffic spaces, always pristine',desc:'We provide professional cleaning for shopping centres, retail precincts and events across Adelaide. Whether it\'s daily maintenance, pre-event setup or post-event cleanup — reliable results at scale.',duration:'&#9200; Duration varies by project',img:'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80',items:['Common areas maintained','Floor scrubbing & polishing','Entrance & lobby cleaning','Amenities disinfected','Escalators & lifts wiped','Rubbish & waste removed','Pre-event setup cleaning','Post-event deep clean','Graffiti & spill response','Night & after-hours available','Scheduled rosters available','Dedicated site supervisor']},
+  deep:{tag:'&#10024; Every 3–6 Months',title:'Deep Clean',tagline:'A proper top-to-bottom reset',desc:'The deep clean is a more thorough service for homes that need extra care beyond a regular clean. We recommend starting with a deep clean if your property hasn\'t been professionally cleaned recently.',duration:'&#9200; 4–6 hours typical duration',img:'https://images.unsplash.com/photo-1628177142898-93e36e4e3a0b?w=800&q=80',items:['Ceiling fans dusted','Skirting boards cleaned','Window sills & frames','Oven deep cleaned','Rangehood & filter cleaned','Cupboard interiors wiped','Cooktop & splashback scrubbed','Grout deep cleaned','Shower glass descaled','Extraction fans cleaned','Mirrors polished streak-free','All floors vacuumed & mopped']}
 };
 
 function openModal(id) {
@@ -1153,7 +1053,7 @@ function openModal(id) {
     <p class="svc-modal-desc">${s.desc}</p>
     <div class="svc-modal-duration">${s.duration}</div>
     <ul class="svc-modal-checklist">${s.items.map(i=>`<li>${i}</li>`).join('')}</ul>
-    <a href="tel:0494360959" class="btn btn-teal" style="width:100%;justify-content:center">📞 Book This Service →</a>
+    <a href="tel:0494360959" class="btn btn-teal" style="width:100%;justify-content:center">&#128222; Book This Service &#8594;</a>
   `;
   document.getElementById('svcOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1165,15 +1065,13 @@ function closeModal() {
 function closeModalBg(e) { if (e.target === document.getElementById('svcOverlay')) closeModal(); }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* ── Nav ── */
 const mainNav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
   mainNav.classList.toggle('solid', window.scrollY > 10);
-  // active link highlight
   const secs = ['home','services','why','about','contact'];
   let cur = 'home';
   secs.forEach(id => { const el=document.getElementById(id); if(el && window.scrollY >= el.offsetTop-110) cur=id; });
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href')==='#'+cur));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href')=='#'+cur));
 }, { passive: true });
 
 function toggleMob() {
@@ -1189,7 +1087,6 @@ document.addEventListener('click', e => {
   if(m.classList.contains('open') && !m.contains(e.target) && !h.contains(e.target)) closeMob();
 });
 
-/* ── Scroll reveal ── */
 const sro = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); sro.unobserve(e.target); } });
 }, { threshold: .08 });
@@ -1198,7 +1095,6 @@ document.querySelectorAll('.sr,.srL,.srR').forEach((el,i) => {
   sro.observe(el);
 });
 
-/* ── Smooth scroll with dynamic offset ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id = a.getAttribute('href').slice(1);
@@ -1212,7 +1108,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/* ── Video fallback ── */
 const vid = document.getElementById('heroVideo');
 if (vid) { setTimeout(() => { if(vid.readyState===0) vid.style.display='none'; }, 3500); }
 </script>
