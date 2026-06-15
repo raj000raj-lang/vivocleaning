@@ -86,12 +86,12 @@ ul { list-style: none; }
 }
 .nav-logo {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.5rem, 3vw, 1.9rem);
-  font-weight: 600; color: #fff;
-  letter-spacing: -.02em; line-height: 1;
-  transition: color .3s; white-space: nowrap;
+  
+   
+   
+   
 }
-.nav.solid .nav-logo { color: var(--teal-deep); }
+.nav.solid .nav-logo {  }
 .nav-logo span { color: var(--teal); font-style: italic; }
 .nav-spacer { flex: 1; }
 .nav-links { display: flex; list-style: none; }
@@ -619,6 +619,42 @@ ul { list-style: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ═══ NAV LOGO TAGLINE ═══ */
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  
+}
+.nav-logo-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -.02em;
+  line-height: 1;
+  color: #fff;
+  white-space: nowrap;
+  transition: color .3s;
+}
+.nav-logo-main span { color: var(--teal); font-style: italic; }
+.nav.solid .nav-logo-main { color: var(--teal-deep); }
+.nav-tagline {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.5);
+  margin-top: .18rem;
+  font-style: normal;
+  transition: color .3s;
+  white-space: nowrap;
+}
+.nav.solid .nav-tagline { color: var(--muted); }
+
 </style>
 </head>
 <body>
@@ -648,7 +684,10 @@ ul { list-style: none; }
 
 <!-- ═══ NAV ═══ -->
 <nav class="nav" id="mainNav">
-  <a href="#home" class="nav-logo">Vivo <span>Cleaning</span></a>
+  <a href="#home" class="nav-logo">
+    <span class="nav-logo-main">Vivo <span>Cleaning</span></span>
+    <small class="nav-tagline">Residential &amp; Commercial</small>
+  </a>
   <div class="nav-spacer"></div>
   <ul class="nav-links">
     <li><a href="#home" class="active">Home</a></li>
@@ -674,10 +713,14 @@ ul { list-style: none; }
 <section class="hero" id="home">
   <div class="hero-video">
     <video autoplay muted loop playsinline
-      poster="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1800&q=80"
+      poster="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1800&q=85"
       id="heroVideo">
-      <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4">
-      <source src="https://videos.pexels.com/video-files/4571429/4571429-hd_1920_1080_25fps.mp4" type="video/mp4">
+      <!-- Bright, clean modern living room — natural light, serene & fresh -->
+      <source src="https://videos.pexels.com/video-files/5744424/5744424-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      <!-- Sunlit clean house interior walkthrough — spacious & spotless -->
+      <source src="https://videos.pexels.com/video-files/7578552/7578552-hd_1920_1080_25fps.mp4" type="video/mp4">
+      <!-- Modern cosy clean apartment living room -->
+      <source src="https://videos.pexels.com/video-files/3769951/3769951-hd_1920_1080_25fps.mp4" type="video/mp4">
     </video>
   </div>
   <div class="hero-ov"></div>
@@ -695,7 +738,6 @@ ul { list-style: none; }
       <div class="trust-pill">&#9989; Fully Insured</div>
       <div class="trust-pill">&#127807; Eco-Friendly</div>
       <div class="trust-pill">&#129309; No Lock-in Contracts</div>
-      
     </div>
   </div>
   <div class="scroll-cue">
@@ -879,8 +921,8 @@ ul { list-style: none; }
     <div class="about-grid">
       <div class="about-img-wrap srL">
         <img class="about-img-main"
-          src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a0b?w=800&q=80"
-          alt="Vivo Cleaning team at work" loading="lazy">
+          src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80"
+          alt="Professional cleaner working in a clean Adelaide home" loading="lazy">
         <div class="about-float">
           <div><div class="afb-num">10+ Yrs</div><div class="afb-label">Serving Adelaide</div></div>
         </div>
@@ -1031,7 +1073,7 @@ ul { list-style: none; }
 <script>
 const SVC = {
   domestic:{tag:'&#127968; Most Popular',title:'Domestic Cleaning',tagline:'Your weekly reset button',desc:'Designed to maintain your home between the chaos of everyday life. Our regular domestic clean keeps things fresh, tidy, and under control week after week. Most clients choose weekly or fortnightly visits.',duration:'&#9200; 2–4 hours typical duration',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',items:['All surfaces dusted & wiped','Furniture dusted','Light switches sanitised','Sink & tapware cleaned','Shower & tiles cleaned','Toilet disinfected','Microwave inside & out','Appliances exteriors wiped','Cupboard exteriors wiped','Bins emptied','Floors vacuumed','Floors mopped']},
-  ndis:{tag:'&#9855; NDIS/Aged Care',title:'NDIS/Aged Care Cleaning',tagline:'Compassionate, reliable support',desc:'Vivo Cleaning is a NDIS/Aged Care Cleaning provider. We understand every participant\'s needs are unique and tailor our services accordingly — delivering compassionate, respectful cleaning that supports independence and dignity.',duration:'&#9200; Duration varies by care plan',img:'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80',items:['Tailored to NDIS care plans','Trained & compassionate staff','Flexible scheduling','Surfaces dusted & sanitised','Kitchen benches cleaned','Bathroom thoroughly cleaned','Toilets disinfected','Floors vacuumed & mopped','Bins emptied','Laundry assistance available','Plan-managed & self-managed','Regular progress updates']},
+  ndis:{tag:'&#9855; NDIS/Aged Care',title:'NDIS/Aged Care Cleaning',tagline:'Compassionate, reliable support',desc:'Vivo Cleaning is a registered NDIS provider. We understand every participant\'s needs are unique and tailor our services accordingly — delivering compassionate, respectful cleaning that supports independence and dignity.',duration:'&#9200; Duration varies by care plan',img:'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80',items:['Tailored to NDIS care plans','Trained & compassionate staff','Flexible scheduling','Surfaces dusted & sanitised','Kitchen benches cleaned','Bathroom thoroughly cleaned','Toilets disinfected','Floors vacuumed & mopped','Bins emptied','Laundry assistance available','Plan-managed & self-managed','Regular progress updates']},
   homecare:{tag:'&#10084;&#65039; Aged Care',title:'Home Care Cleaning',tagline:'Gentle care, real respect',desc:'Our home care service is designed for elderly clients and those requiring extra support. We provide gentle, respectful cleaning that helps seniors live comfortably and safely in their own homes.',duration:'&#9200; Flexible — based on care needs',img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',items:['Safe, non-toxic products','Patient & respectful staff','Living areas cleaned','Kitchen cleaned & sanitised','Bathroom & toilet disinfected','Floors vacuumed & mopped','Bins emptied & replaced','Laundry assistance available','Flexible visit scheduling','Consistent assigned cleaner','Progress notes if required','Fully insured & police-checked']},
   office:{tag:'&#127962; Commercial',title:'Office & Commercial Cleaning',tagline:'A workspace your team deserves',desc:'We tailor commercial cleaning schedules to your business hours and requirements. From small offices to large commercial premises — professional, consistent results every time with minimal disruption.',duration:'&#9200; Duration varies by premises size',img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',items:['Desks & surfaces wiped','Screens & keyboards dusted','Phones & equipment sanitised','Meeting rooms cleaned','Skirting boards dusted','Bins emptied & replaced','Breakroom / kitchen cleaned','Appliances wiped inside & out','Toilets & urinals disinfected','Soap & paper restocked','Mirrors & glass cleaned','Floors vacuumed & mopped']},
   lease:{tag:'&#128273; Get Your Bond Back',title:'End of Lease Clean',tagline:'Move out stress-free',desc:'Moving is stressful enough — our end of lease clean is designed to satisfy even the strictest property manager inspection and maximise your bond return. We cover every detail, top to bottom.',duration:'&#9200; 6–8 hours typical duration',img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',items:['Inside windows cleaned','Cobweb removal throughout','Oven deep cleaned','Fridge inside (on request)','Cupboards inside & out','Drawers cleaned inside','Window tracks & frames','Wall spot cleaning','Grout deep cleaned','Shower glass descaled','Mirrors streak-free polished','All floors vacuumed & mopped']},
@@ -1109,7 +1151,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 const vid = document.getElementById('heroVideo');
-if (vid) { setTimeout(() => { if(vid.readyState===0) vid.style.display='none'; }, 3500); }
+if (vid) { setTimeout(() => { if(vid.readyState===0) vid.style.display='none'; }, 5000); }
 </script>
 </body>
 </html>
