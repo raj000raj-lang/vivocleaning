@@ -672,7 +672,7 @@ ul { list-style: none; }
   <div class="ib-div"></div>
   <div class="ib-item">
     <svg width="13" height="13" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-    <a href="mailto:vivocleaning@yahoo.com">vivocleaning@yahoo.com</a>
+    <a href="mailto:info@vivocleaning.com.au">info@vivocleaning.com.au</a>
   </div>
   <div class="ib-div"></div>
   <div class="ib-item">
@@ -764,7 +764,8 @@ ul { list-style: none; }
         <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('ndis')">
-        <div class="svc-home-icon">&#9855;</div>
+		<div class="svc-home-icon">&#129491;</div>  
+       <!-- <div class="svc-home-icon">&#9855;</div> -->
         <div class="svc-home-name">NDIS/Aged Care Cleaning</div>
         <div class="svc-home-tagline"> NDIS/Aged Care Cleaning provides &#8212; compassionate, reliable support.</div>
         <div class="svc-home-link">Learn More <span>&#8594;</span></div>
@@ -772,7 +773,7 @@ ul { list-style: none; }
       <div class="svc-card-home sr" onclick="openModal('homecare')">
         <div class="svc-home-icon">&#10084;&#65039;</div>
         <div class="svc-home-name">Home Care Cleaning</div>
-        <div class="svc-home-tagline">Aged care cleaning &#8212; safe, gentle and respectful.</div>
+        <div class="svc-home-tagline">Home care cleaning &#8212; safe, gentle and respectful.</div>
         <div class="svc-home-link">Learn More <span>&#8594;</span></div>
       </div>
       <div class="svc-card-home sr" onclick="openModal('office')">
@@ -874,7 +875,9 @@ ul { list-style: none; }
   </div>
 </section>
 
+
 <!-- ═══ REVIEWS ═══ -->
+<!--
 <section class="sec reviews" id="reviews">
   <div class="sec-inner">
     <div class="rev-header sr">
@@ -901,16 +904,17 @@ ul { list-style: none; }
     </div>
   </div>
 </section>
+-->
 
 <!-- ═══ CTA STRIP ═══ -->
 <div class="cta-strip sr">
   <div class="cta-content">
     <h2>Ready for a <em>cleaner space?</em></h2>
-    <p>Free quote in under 3 minutes. No lock-in contracts. No hidden fees.</p>
+    <p>Free quote in under 10 minutes. No lock-in contracts. No hidden fees.</p>
   </div>
   <div class="cta-actions">
     <a href="tel:0494360959" class="btn btn-gold">&#128222; Call 0494 360 959</a>
-    <a href="mailto:vivocleaning@yahoo.com" class="btn btn-outline-w">&#9993; Email Us</a>
+    <a href="mailto:info@vivocleaning.com.au" class="btn btn-outline-w">&#9993; Email Us</a>
   </div>
 </div>
 
@@ -923,7 +927,7 @@ ul { list-style: none; }
           src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800&q=80"
           alt="Professional cleaner working in a clean Adelaide home" loading="lazy">
         <div class="about-float">
-          <div><div class="afb-num">10+ Yrs</div><div class="afb-label">Serving Adelaide</div></div>
+          <div><div class="afb-num">Afforable Services</div><div class="afb-label">Serving Adelaide</div></div>
         </div>
       </div>
       <div class="srR">
@@ -958,7 +962,7 @@ ul { list-style: none; }
             <div class="cinfo-list">
               <div class="cinfo-item"><div class="cinfo-icon">&#128205;</div><div><div class="cinfo-label">Address</div><div class="cinfo-val">Shop 4, 475 Payneham Road, Felixstow SA 5070</div></div></div>
               <div class="cinfo-item"><div class="cinfo-icon">&#128222;</div><div><div class="cinfo-label">Phone</div><div class="cinfo-val"><a href="tel:0494360959">0494 360 959</a></div></div></div>
-              <div class="cinfo-item"><div class="cinfo-icon">&#9993;</div><div><div class="cinfo-label">Email</div><div class="cinfo-val"><a href="mailto:vivocleaning@yahoo.com">vivocleaning@yahoo.com</a></div></div></div>
+              <div class="cinfo-item"><div class="cinfo-icon">&#9993;</div><div><div class="cinfo-label">Email</div><div class="cinfo-val"><a href="mailto:info@vivocleaning.com.au">info@vivocleaning.com.au</a></div></div></div>
               <div class="cinfo-item"><div class="cinfo-icon">&#127760;</div><div><div class="cinfo-label">Website</div><div class="cinfo-val"><a href="https://vivocleaning.com.au" style="color:var(--teal)">vivocleaning.com.au</a></div></div></div>
               <div class="cinfo-item"><div class="cinfo-icon">&#128336;</div><div><div class="cinfo-label">Hours</div><div class="cinfo-val">Mon&#8211;Fri 7am&#8211;7pm &middot; Sat&#8211;Sun 8am&#8211;5pm</div></div></div>
             </div>
@@ -966,19 +970,19 @@ ul { list-style: none; }
         </div>
       </div>
       <div class="srR">
-        <div class="cform">
+        <div class="cform" id="contactForm">
           <h3>Send us a message</h3>
           <div class="form-row">
-            <div class="fld"><label>First Name</label><input type="text" placeholder="Jane"></div>
-            <div class="fld"><label>Last Name</label><input type="text" placeholder="Smith"></div>
+            <div class="fld"><label>First Name</label><input type="text" name="first_name" placeholder="Jane" required></div>
+            <div class="fld"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required></div>
           </div>
           <div class="form-row">
-            <div class="fld"><label>Phone</label><input type="tel" placeholder="04xx xxx xxx"></div>
-            <div class="fld"><label>Email</label><input type="email" placeholder="jane@email.com"></div>
+            <div class="fld"><label>Phone</label><input type="tel" name="phone" placeholder="04xx xxx xxx"></div>
+            <div class="fld"><label>Email</label><input type="email" name="email" placeholder="jane@email.com"></div>
           </div>
           <div class="form-row">
             <div class="fld"><label>Service Needed</label>
-              <select>
+              <select name="service">
                 <option>Domestic Cleaning</option>
                 <option>NDIS Cleaning</option>
                 <option>Home Care / Aged Care</option>
@@ -992,12 +996,13 @@ ul { list-style: none; }
                 <option>Other</option>
               </select>
             </div>
-            <div class="fld"><label>Suburb</label><input type="text" placeholder="Norwood, Burnside..."></div>
+            <div class="fld"><label>Suburb</label><input type="text" name="suburb" placeholder="Norwood, Burnside..."></div>
           </div>
           <div class="form-row full">
-            <div class="fld"><label>Message</label><textarea placeholder="Tell us about your property and what you need..."></textarea></div>
+            <div class="fld"><label>Message</label><textarea name="message" placeholder="Tell us about your property and what you need..." required></textarea></div>
           </div>
-          <button class="submit-btn" onclick="return false">Send Message &#8594;</button>
+          <button class="submit-btn" id="submitBtn" type="button" onclick="submitForm()">Send Message &#8594;</button>
+          <div id="formMsg" style="margin-top:.8rem;padding:.75rem 1rem;border-radius:10px;font-size:.9rem;display:none;font-family:'DM Sans',sans-serif;"></div>
         </div>
       </div>
     </div>
@@ -1013,7 +1018,7 @@ ul { list-style: none; }
       <p class="foot-desc">Adelaide's trusted cleaning partner for homes, offices, schools, NDIS participants &amp; community spaces. Serving all suburbs across South Australia.</p>
       <div class="foot-contact">
         <span>&#128222; <a href="tel:0494360959">0494 360 959</a></span>
-        <span>&#9993; <a href="mailto:vivocleaning@yahoo.com">vivocleaning@yahoo.com</a></span>
+        <span>&#9993; <a href="mailto:info@vivocleaning.com.au">info@vivocleaning.com.au</a></span>
         <span>&#128205; Shop 4, 475 Payneham Rd, Felixstow SA 5070</span>
         <span>&#127760; <a href="https://vivocleaning.com.au">vivocleaning.com.au</a></span>
       </div>
@@ -1058,7 +1063,7 @@ ul { list-style: none; }
     <div class="socials">
       <a class="soc" href="#" title="Facebook">f</a>
       <a class="soc" href="#" title="Instagram">ig</a>
-      <a class="soc" href="mailto:vivocleaning@yahoo.com" title="Email">&#9993;</a>
+      <a class="soc" href="mailto:info@vivocleaning.com.au" title="Email">&#9993;</a>
     </div>
   </div>
 </footer>
@@ -1073,12 +1078,12 @@ ul { list-style: none; }
 const SVC = {
   domestic:{tag:'&#127968; Most Popular',title:'Domestic Cleaning',tagline:'Your weekly reset button',desc:'Designed to maintain your home between the chaos of everyday life. Our regular domestic clean keeps things fresh, tidy, and under control week after week. Most clients choose weekly or fortnightly visits.',duration:'&#9200; 2–4 hours typical duration',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',items:['All surfaces dusted & wiped','Furniture dusted','Light switches sanitised','Sink & tapware cleaned','Shower & tiles cleaned','Toilet disinfected','Microwave inside & out','Appliances exteriors wiped','Cupboard exteriors wiped','Bins emptied','Floors vacuumed','Floors mopped']},
   ndis:{tag:'&#9855; NDIS/Aged Care',title:'NDIS/Aged Care Cleaning',tagline:'Compassionate, reliable support',desc:'Vivo Cleaning is a registered NDIS provider. We understand every participant\'s needs are unique and tailor our services accordingly — delivering compassionate, respectful cleaning that supports independence and dignity.',duration:'&#9200; Duration varies by care plan',img:'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=800&q=80',items:['Tailored to NDIS care plans','Trained & compassionate staff','Flexible scheduling','Surfaces dusted & sanitised','Kitchen benches cleaned','Bathroom thoroughly cleaned','Toilets disinfected','Floors vacuumed & mopped','Bins emptied','Laundry assistance available','Plan-managed & self-managed','Regular progress updates']},
-  homecare:{tag:'&#10084;&#65039; Aged Care',title:'Home Care Cleaning',tagline:'Gentle care, real respect',desc:'Our home care service is designed for elderly clients and those requiring extra support. We provide gentle, respectful cleaning that helps seniors live comfortably and safely in their own homes.',duration:'&#9200; Flexible — based on care needs',img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',items:['Safe, non-toxic products','Patient & respectful staff','Living areas cleaned','Kitchen cleaned & sanitised','Bathroom & toilet disinfected','Floors vacuumed & mopped','Bins emptied & replaced','Laundry assistance available','Flexible visit scheduling','Consistent assigned cleaner','Progress notes if required','Fully insured & police-checked']},
+  homecare:{tag:'&#10084;&#65039; Domestic Cleaning',title:'Home Care Cleaning',tagline:'Gentle care, real respect',desc:'Our home care service is designed for elderly clients and those requiring extra support. We provide gentle, respectful cleaning that helps seniors live comfortably and safely in their own homes.',duration:'&#9200; Flexible — based on care needs',img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80',items:['Safe, non-toxic products','Patient & respectful staff','Living areas cleaned','Kitchen cleaned & sanitised','Bathroom & toilet disinfected','Floors vacuumed & mopped','Bins emptied & replaced','Laundry assistance available','Flexible visit scheduling','Consistent assigned cleaner','Progress notes if required','Fully insured & police-checked']},
   office:{tag:'&#127962; Commercial',title:'Office & Commercial Cleaning',tagline:'A workspace your team deserves',desc:'We tailor commercial cleaning schedules to your business hours and requirements. From small offices to large commercial premises — professional, consistent results every time with minimal disruption.',duration:'&#9200; Duration varies by premises size',img:'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',items:['Desks & surfaces wiped','Screens & keyboards dusted','Phones & equipment sanitised','Meeting rooms cleaned','Skirting boards dusted','Bins emptied & replaced','Breakroom / kitchen cleaned','Appliances wiped inside & out','Toilets & urinals disinfected','Soap & paper restocked','Mirrors & glass cleaned','Floors vacuumed & mopped']},
   lease:{tag:'&#128273; Get Your Bond Back',title:'End of Lease Clean',tagline:'Move out stress-free',desc:'Moving is stressful enough — our end of lease clean is designed to satisfy even the strictest property manager inspection and maximise your bond return. We cover every detail, top to bottom.',duration:'&#9200; 6–8 hours typical duration',img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',items:['Inside windows cleaned','Cobweb removal throughout','Oven deep cleaned','Fridge inside (on request)','Cupboards inside & out','Drawers cleaned inside','Window tracks & frames','Wall spot cleaning','Grout deep cleaned','Shower glass descaled','Mirrors streak-free polished','All floors vacuumed & mopped']},
   presell:{tag:'&#127969; Selling Your Home',title:'Pre-Sell Cleaning',tagline:'First impressions sell homes',desc:'Presenting your property at its absolute best can make a real difference to buyer perception and sale price. Our pre-sell clean ensures your home looks immaculate for photos, inspections and open homes.',duration:'&#9200; 4–7 hours typical duration',img:'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',items:['Full interior deep clean','Windows cleaned inside','All surfaces polished','Kitchen deep cleaned','Oven & appliances cleaned','Bathrooms deep scrubbed','Grout & tiles descaled','Cobwebs removed','Doors & frames wiped','Skirting boards cleaned','Mirrors & glass streak-free','Floors vacuumed & mopped']},
   school:{tag:'&#127979; Education Sector',title:'School Cleaning',tagline:'Safe, hygienic learning environments',desc:'We provide professional cleaning for schools, childcare centres and educational facilities across Adelaide. Our team ensures classrooms, common areas and amenities meet the highest hygiene standards.',duration:'&#9200; After hours or scheduled visits',img:'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80',items:['Classrooms dusted & sanitised','Desks & chairs wiped down','Whiteboards & surfaces cleaned','Common areas thoroughly cleaned','Toilets & amenities disinfected','Soap & paper restocked','Kitchen / staffroom cleaned','Hard floors mopped','Carpets vacuumed','Bins emptied throughout','Touch points sanitised','Eco-safe products used']},
-  gardening:{tag:'&#127807; Outdoor Services',title:'Gardening Services',tagline:'Kerb appeal you\'ll be proud of',desc:'Our gardening and outdoor maintenance covers everything from regular lawn mowing to full garden tidy-ups. Ideal as a standalone service or combined with our cleaning packages for complete property care.',duration:'&#9200; Duration varies by garden size',img:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',items:['Lawn mowing & edging','Garden beds weeded','Hedges & shrubs pruned','Leaf blowing & raking','Path & driveway sweeping','Green waste removed','Garden watering (on request)','Mulching available','Seasonal tidy-ups','Combine with indoor cleaning']},
+  gardening:{tag:'&#127807; Outdoor Services',title:'Gardening Services',tagline:'Kerb appeal you\'ll be proud of',desc:'Our gardening and outdoor maintenance covers everything from regular lawn mowing to full garden tidy-ups. Ideal as a standalone service or combined with our cleaning packages for complete property care.',duration:'&#9200; Duration varies by garden size',img:'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',items:['Lawn mowing & edging','Garden beds weeded','Hedges & shrubs pruned','Leaf blowing & raking','Path & driveway sweeping','Garden watering (on request)','Mulching available','Seasonal tidy-ups','Combine with indoor cleaning']},
   shopping:{tag:'&#128717; High Traffic Spaces',title:'Shopping Centre & Event Cleaning',tagline:'High-traffic spaces, always pristine',desc:'We provide professional cleaning for shopping centres, retail precincts and events across Adelaide. Whether it\'s daily maintenance, pre-event setup or post-event cleanup — reliable results at scale.',duration:'&#9200; Duration varies by project',img:'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=800&q=80',items:['Common areas maintained','Floor scrubbing & polishing','Entrance & lobby cleaning','Amenities disinfected','Escalators & lifts wiped','Rubbish & waste removed','Pre-event setup cleaning','Post-event deep clean','Graffiti & spill response','Night & after-hours available','Scheduled rosters available','Dedicated site supervisor']},
   deep:{tag:'&#10024; Every 3–6 Months',title:'Deep Clean',tagline:'A proper top-to-bottom reset',desc:'The deep clean is a more thorough service for homes that need extra care beyond a regular clean. We recommend starting with a deep clean if your property hasn\'t been professionally cleaned recently.',duration:'&#9200; 4–6 hours typical duration',img:'https://images.unsplash.com/photo-1628177142898-93e36e4e3a0b?w=800&q=80',items:['Ceiling fans dusted','Skirting boards cleaned','Window sills & frames','Oven deep cleaned','Rangehood & filter cleaned','Cupboard interiors wiped','Cooktop & splashback scrubbed','Grout deep cleaned','Shower glass descaled','Extraction fans cleaned','Mirrors polished streak-free','All floors vacuumed & mopped']}
 };
@@ -1151,6 +1156,120 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 
 const vid = document.getElementById('heroVideo');
 if (vid) { setTimeout(() => { if(vid.readyState===0) vid.style.display='none'; }, 5000); }
+
+/* ── Contact Form AJAX ── */
+function submitForm() {
+  const btn = document.getElementById('submitBtn');
+  const msg = document.getElementById('formMsg');
+  const form = document.getElementById('contactForm');
+
+  // Collect fields
+  const data = new FormData();
+  data.append('first_name', form.querySelector('[name="first_name"]').value.trim());
+  data.append('last_name',  form.querySelector('[name="last_name"]').value.trim());
+  data.append('phone',      form.querySelector('[name="phone"]').value.trim());
+  data.append('email',      form.querySelector('[name="email"]').value.trim());
+  data.append('service',    form.querySelector('[name="service"]').value);
+  data.append('suburb',     form.querySelector('[name="suburb"]').value.trim());
+  data.append('message',    form.querySelector('[name="message"]').value.trim());
+
+  // Basic client-side check
+  if (!data.get('first_name') || !data.get('last_name')) {
+    showMsg('Please enter your first and last name.', false);
+    return;
+  }
+  if (!data.get('message')) {
+    showMsg('Please enter a message.', false);
+    return;
+  }
+  if (!data.get('phone') && !data.get('email')) {
+    showMsg('Please provide a phone number or email address.', false);
+    return;
+  }
+
+  // Send
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  fetch('contact.php', { method: 'POST', body: data })
+    .then(r => r.json())
+    .then(res => {
+      if (res.success) {
+        showMsg('✓ ' + res.message, true);
+        form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+        btn.textContent = 'Message Sent ✓';
+      } else {
+        showMsg('✗ ' + res.message, false);
+        btn.disabled = false;
+        btn.textContent = 'Send Message →';
+      }
+    })
+    .catch(() => {
+      showMsg('✗ Unable to send. Please call us on 0494 360 959.', false);
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    });
+}
+
+function showMsg(text, success) {
+  const msg = document.getElementById('formMsg');
+  msg.textContent = text;
+  msg.style.display = 'block';
+  msg.style.background = success ? '#EAF8F7' : '#FEF2F2';
+  msg.style.color = success ? '#074847' : '#B91C1C';
+  msg.style.border = '1.5px solid ' + (success ? '#1BBFB5' : '#FECACA');
+}
+
+
+/* ── Contact Form Submit ── */
+function submitForm() {
+  const btn = document.getElementById('submitBtn');
+  const form = document.getElementById('contactForm');
+
+  const data = new FormData();
+  data.append('first_name', form.querySelector('[name="first_name"]').value.trim());
+  data.append('last_name',  form.querySelector('[name="last_name"]').value.trim());
+  data.append('phone',      form.querySelector('[name="phone"]').value.trim());
+  data.append('email',      form.querySelector('[name="email"]').value.trim());
+  data.append('service',    form.querySelector('[name="service"]').value);
+  data.append('suburb',     form.querySelector('[name="suburb"]').value.trim());
+  data.append('message',    form.querySelector('[name="message"]').value.trim());
+
+  if (!data.get('first_name') || !data.get('last_name')) { showMsg('Please enter your name.', false); return; }
+  if (!data.get('message')) { showMsg('Please enter a message.', false); return; }
+  if (!data.get('phone') && !data.get('email')) { showMsg('Please provide a phone or email.', false); return; }
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  fetch('contact.php', { method: 'POST', body: data })
+    .then(r => r.json())
+    .then(res => {
+      showMsg((res.success ? '✓ ' : '✗ ') + res.message, res.success);
+      if (res.success) {
+        form.querySelectorAll('input,textarea,select').forEach(el => el.value = '');
+        btn.textContent = 'Message Sent ✓';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Message →';
+      }
+    })
+    .catch(() => {
+      showMsg('✗ Could not send. Please call 0494 360 959.', false);
+      btn.disabled = false;
+      btn.textContent = 'Send Message →';
+    });
+}
+
+function showMsg(text, ok) {
+  const el = document.getElementById('formMsg');
+  el.textContent = text;
+  el.style.display = 'block';
+  el.style.background = ok ? '#EAF8F7' : '#FEF2F2';
+  el.style.color      = ok ? '#074847'  : '#B91C1C';
+  el.style.border     = '1.5px solid ' + (ok ? '#1BBFB5' : '#FECACA');
+}
+
 </script>
 </body>
 </html>
